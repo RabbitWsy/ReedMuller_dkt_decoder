@@ -1,0 +1,6 @@
+add_executable(rm_tests main.cpp)
+
+target_link_libraries(rm_tests rm_decoder)
+
+# add the test
+add_test(NAME BasicTests COMMAND rm_tests)

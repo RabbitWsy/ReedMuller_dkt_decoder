@@ -1,0 +1,14 @@
+# create the static or shared library
+add_library(rm_decoder
+    boolean_function.cpp
+    reed_muller_decoder.cpp
+)
+
+# set the header files path
+target_include_directories(rm_decoder PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+# install the library
+install(TARGETS rm_decoder
+        ARCHIVE DESTINATION lib          # static library
+        LIBRARY DESTINATION lib          # shared library
+        INCLUDES DESTINATION include)
