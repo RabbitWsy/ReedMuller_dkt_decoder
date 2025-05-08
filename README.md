@@ -1,2 +1,2 @@
-# dkt_ReedMuller_decoder
+# ReedMuller_dkt_decoder
 the implementation of the dkt algorithm
