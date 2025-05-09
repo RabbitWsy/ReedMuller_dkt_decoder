@@ -37,7 +37,7 @@ std::vector<BooleanFunction> ReedMullerDecoder::list_decode_recursive(const Bool
         // RM(m, m) consists of all Boolean functions in m variables
         // Just return the received function if it's within the radius
         std::vector<BooleanFunction> result;
-        if (f.dist(f) <= compute_radius(1 << m, 0.0, epsilon)) {
+        if (f.dist(f) <= radius) {
             result.push_back(f);
         }
         return result;

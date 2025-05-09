@@ -10,6 +10,7 @@
   - `concate()`: Concatenates two functions
   - `dist()`: Hamming distance calculation
   - `operator+`: GF(2) addition
+  - ...
 - **Data Structure**: 
   - Compressed truth table (bit array)
   - Variable count tracking
@@ -25,29 +26,27 @@
 
 ### Recursive Structure
 1. **Base Cases**:
-   - `s=0`: Returns constant 0/1 functions
-   - `s=m`: Returns input function (practical limitation)
+   - $s=0$: Returns constant $0/1$ functions
+   - $s=m$: Returns input function (practical limitation)
 
 2. **Recursive Case**:
    - Decomposes into three subproblems:
-     - `f0 = f|xi=0`
-     - `f1 = f|xi=1` 
-     - `f_sum = f0 + f1`
+     - $f_0 = f\mid_{x_i=0}$
+     - $f_1 = f\mid_{x_i=1}$
+     - $f_{sum} = f_0 + f_1$
    - Recursively decodes with:
-     - `f_sum` at degree s-1
-     - `f0/f1` at degree s
+     - $f_{sum}$ at degree $s-1$
+     - $f_0/f_1$ at degree $s$
 
 3. **Result Combination**:
    - Uses Plotkin construction:
-     - Type A: (u0, u0 + v)
-     - Type B: (u1 + v, u1)
+     - Type A: $(u_0, u_0 + v)$
+     - Type B: $(u_1 + v, u_1)$
    - Filters candidates by radius check
 
 ### Critical Parameters
-- Decoding radius: `radius = n*(2^{-s} - ε)`
-- Subproblem radii adjusted for recursion:
-  - `sub_radius = n/2*(2^{-s} - ε)`
-  - `sub_radius_sum = n/2*(2^{-(s-1)} - 2ε)`
+- Decoding radius: $\text{Radius} = n(2^{-s} - \epsilon)$
+- Candidate filtering: $\text{Hamming distance} \leq \text{radius}$
 
 ## 3. Interface Specification
 
@@ -60,7 +59,7 @@ std::vector<BooleanFunction> decode(
 ```
 
 **Preconditions**:
-- 0 ≤ s ≤ m (m = number of variables)
-- ε < 2^{-s}
-- m ≤ 30 (practical limitation)
+- $0 \leq s \leq m$ (m = number of variables)
+- $\epsilon < 2^{-s}$
+- $m \leq 30$ (practical limitation)
 

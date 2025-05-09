@@ -1,4 +1,4 @@
-add_executable(rm_tests main.cpp)
+add_executable(rm_tests test_RM1-3.cpp)
 
 target_link_libraries(rm_tests rm_decoder)
 
