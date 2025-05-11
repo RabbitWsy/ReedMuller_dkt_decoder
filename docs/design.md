@@ -5,11 +5,11 @@
 ### BooleanFunction Class
 - **Purpose**: Represents Boolean functions with truth table storage and operations
 - **Key Methods**:
-  - `restrict()`: Variable restriction (f|xi=b)
+  - `restrict()`: Variable restriction ($f\mid_{x_i=b}$)
   - `eval()`: Function evaluation at a point
   - `concate()`: Concatenates two functions
   - `dist()`: Hamming distance calculation
-  - `operator+`: GF(2) addition
+  - `operator+`: $\text{GF}(2)$ addition
   - ...
 - **Data Structure**: 
   - Compressed truth table (bit array)
@@ -59,7 +59,7 @@ std::vector<BooleanFunction> decode(
 ```
 
 **Preconditions**:
-- $0 \leq s \leq m$ (m = number of variables)
+- $0 \leq s \leq m$ ($m$ = number of variables)
 - $\epsilon < 2^{-s}$
 - $m \leq 30$ (practical limitation)
 

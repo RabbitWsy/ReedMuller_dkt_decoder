@@ -18,4 +18,4 @@ cmake --install . --prefix ./install
 
 ```
 
-you can add your own test cases in the tests directory , modify the `tests/CMakeLists.txt` file and run them with `ctest -V`
+you can add your own test cases in the tests directory , modify the `tests/CMakeLists.txt` file and run them with `ctest -V`. Additionaly, we have a `main_test.cpp` to generate a performance report saved in `decoder_performance_report.txt` and `boundary_tests.txt`.
